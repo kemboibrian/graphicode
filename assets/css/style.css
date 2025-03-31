@@ -879,17 +879,28 @@ a.theme-btn.hover-secondary:hover {
 }
 
 .preloader .custom-loader {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
+ 
+  border-radius: 100%;
   background-color: transparent;
-  border: 2px solid var(--ridda-heading-color);
   border-top: 2px solid var(--ridda-primary-color);
   border-bottom: 2px solid var(--ridda-primary-color);
   -webkit-animation: 1s preloader linear infinite;
   animation: 1s preloader linear infinite;
 }
+.preloader .custom-loader::before {
+  content: "Hive Studio";
+  animation: fadeInOut 1.5s linear infinite;
+}
 
+/* Optional animation for fading effect */
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 /* Pagination */
 .pagination {
   -webkit-box-align: center;
